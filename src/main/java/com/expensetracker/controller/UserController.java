@@ -10,6 +10,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+public class HomeController {
+
+  @GetMapping("/")
+  public String home() {
+    return "Expense Tracker Backend is running ✅";
+  }
+}
+
+@RestController
 @RequestMapping("/api/users")
 @CrossOrigin(origins = "http://localhost:8091") // Allow frontend requests
 public class UserController {
