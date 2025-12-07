@@ -37,7 +37,7 @@ function addExpense(){
         return;
     }
 
-    fetch("http://localhost:8050/api/expenses/add", {
+    fetch("https://expense-tracker-cn.onrender.com/api/expenses/add", {
         method:"POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({title, amount, category, date, user:{id: parseInt(userId)}})
@@ -60,7 +60,7 @@ function addExpense(){
 // ================= Load Expenses =================
 function loadExpenses(){
     if(!userId) return; // safety check
-    fetch(`http://localhost:8050/api/expenses/${userId}`)
+    fetch(`https://expense-tracker-cn.onrender.com/api/expenses/${userId}`)
     .then(res => {
         if(!res.ok) throw new Error("Failed to load expenses");
         return res.json();
@@ -86,7 +86,7 @@ function loadExpenses(){
 
 // ================= Delete Expense =================
 function deleteExpense(id){
-    fetch(`http://localhost:8050/api/expenses/delete/${id}`, {method:"DELETE"})
+    fetch(`https://expense-tracker-cn.onrender.com/api/expenses/delete/${id}`, {method:"DELETE"})
     .then(res => {
         if(!res.ok) throw new Error("Failed to delete expense");
         showToast("Expense deleted", "success");
