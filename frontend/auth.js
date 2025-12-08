@@ -29,7 +29,7 @@ function register() {
         return;
     }
 
-    fetch("https://expense-tracker-cn.onrender.com/api/users/register", {
+    fetch("http://localhost:8050/api/users/register", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({username, email, password})
@@ -77,7 +77,7 @@ function login() {
         return;
     }
 
-    fetch("https://expense-tracker-cn.onrender.com/api/users/login", {
+    fetch("http://localhost:8050/api/users/login", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({email, password})
